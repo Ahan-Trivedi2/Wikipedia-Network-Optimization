@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results - Wikipedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #f6f6f6;
+        font-family: "Georgia", "Times New Roman", serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #a2a9b1;
+      }
+      .table-header {
+        background-color: #f8f9fa;
+        color: #202122;
+      }
+      .wiki-header {
+        background-color: #ffffff;
+        border-bottom: 1px solid #a2a9b1;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.875rem;
+      }
+      .wiki-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333366;
+      }
+      .wiki-links a {
+        color: #0645ad;
+        margin-left: 15px;
+        text-decoration: none;
+      }
+      .wiki-links a:hover {
+        text-decoration: underline;
+      }
+      .footer {
+        font-size: 0.75rem;
+        color: #54595d;
+        text-align: center;
+        margin-top: 20px;
+        border-top: 1px solid #a2a9b1;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Wikipedia-style header -->
+    <div class="wiki-header">
+      <div class="wiki-logo">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/63/Wikipedia-logo.png"
+          alt="Wikipedia"
+          width="35"
+          class="mr-2"
+        />
+        Wikipedia
+      </div>
+      <div class="wiki-links">
+        <a href="#">Main page</a>
+        <a href="#">Contents</a>
+        <a href="#">Current events</a>
+        <a href="#">Random article</a>
+        <a href="#">About Wikipedia</a>
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Search Wikipedia"
+          class="input-field border border-gray-300 px-2 py-1"
+          style="width: 200px"
+        />
+        <button class="bg-blue-500 text-white py-1 px-3 rounded-md">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+      <!-- Page Title -->
+      <div class="title text-2xl font-bold text-gray-800 mb-4">
+        Algorithm Results
+      </div>
+
+      <!-- Table -->
+      <table class="min-w-full border-collapse border border-gray-300">
+        <thead class="table-header">
+          <tr>
+            <th class="px-6 py-3 border border-gray-300">Algorithm</th>
+            <th class="px-6 py-3 border border-gray-300">
+              Length of Shortest Path
+            </th>
+            <th class="px-6 py-3 border border-gray-300">Time (Seconds)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-6 py-3 border border-gray-300">Dijkstra</td>
+            <td class="px-6 py-3 border border-gray-300">
+              {{dijkstra_result}}
+            </td>
+            <td class="px-6 py-3 border border-gray-300">{{dijkstra_time}}</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-3 border border-gray-300">Floyd Warshall</td>
+            <td class="px-6 py-3 border border-gray-300">
+              {{floyd_warshall_result}}
+            </td>
+            <td class="px-6 py-3 border border-gray-300">
+              {{floyd_warshall_time}}
+            </td>
+          </tr>
+          <tr>
+            <td class="px-6 py-3 border border-gray-300">Bellman-Ford</td>
+            <td class="px-6 py-3 border border-gray-300">
+              {{belman_ford_result}}
+            </td>
+            <td class="px-6 py-3 border border-gray-300">
+              {{belman_ford_time}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Back Button -->
+      <div class="mt-6">
+        <button
+          onclick="window.history.back()"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+        >
+          Back
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        This is a project demonstration. Wikipedia® is a registered trademark of
+        the Wikimedia Foundation, Inc., a non-profit organization.
+      </div>
+    </div>
+  </body>
+</html>
